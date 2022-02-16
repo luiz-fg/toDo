@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
+* {
+  font-family: rubik;
+  font-style: italic;
+}
+
+::selection {
+  background: blueviolet;
+  color: white;
+}
+
+body {
+  background-color: blueviolet;
+  min-height: 95vh;
+  width: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  height: 97%;
+  width: 35%;
+}
+
+.input-todo {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  height: 100px;
+  margin: 30px auto 0 auto;
+  width: 500px;
+}
+
+#todo-entry {
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-left: 30px;
+  width: 320px;
+  padding-left: 10px;
+  outline: #392444;
+}
+
+#btn {
+  background-color: blueviolet;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  float: right;
+  margin-top: 25px;
+  margin-right: 30px;
+  height: 45px;
+  width: 65px;
+}
+
+.tasksDo {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  min-height: 0px;
+  margin: 50px auto 0 auto;
+  width: 500px;
+  margin-bottom: 30px;
+}
+
+.task {
+  border-bottom: 1px solid lightgray;
+  font-size: 18px;
+  height: 30px;
+  list-style: none;
+  margin-left: 30px;
+  padding-top: 25px;
+  width: 444px;
+}
+
+.taskText {
+  display: inline-block;
+  width: 390px;
+  margin-top: -26px;
+  padding-top: 33px;
+}
+
+.btn-del {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  float: right;
+  margin-top: -26px;
+  margin-right: -25px;
+  padding: 16px 31px;
+}
+
+.btn-del:hover {
+  color: tomato;
+}
