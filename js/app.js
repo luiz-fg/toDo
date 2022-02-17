@@ -43,18 +43,22 @@ class toDo {
   newTask() {
     todoEntry = document.getElementById("todo-entry").value;
 
-    array = this.getStorage();
-    array.push({
-      idd: this.generateID(),
-      task: todoEntry,
-      status: "toDo",
-    });
+    if (todoEntry == "") {
+      alert("Não aceita entradas vazias!");
+    } else {
+      array = this.getStorage();
+      array.push({
+        idd: this.generateID(),
+        task: todoEntry,
+        status: "toDo",
+      });
 
-    this.setStorage(array);
-    this.showTask();
+      this.setStorage(array);
+      this.showTask();
 
-    todoEntry = document.getElementById("todo-entry").value = "";
-    todoEntry = document.getElementById("todo-entry").focus();
+      todoEntry = document.getElementById("todo-entry").value = "";
+      todoEntry = document.getElementById("todo-entry").focus();
+    }
   }
 
   showTask() {
