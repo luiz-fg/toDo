@@ -42,9 +42,18 @@ class toDo {
 
   newTask() {
     todoEntry = document.getElementById("todo-entry").value;
+    let doubleTask = false;
+
+    for (let i in array) {
+      if (array[i].task == todoEntry) {
+        doubleTask = true;
+      }
+    }
 
     if (todoEntry == "") {
       alert("Não aceita entradas vazias!");
+    } else if (doubleTask) {
+      alert(`tarefa já existe!`);
     } else {
       array = this.getStorage();
       array.push({
