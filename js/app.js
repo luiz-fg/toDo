@@ -45,7 +45,9 @@ class toDo {
     let doubleTask = false;
 
     for (let i in array) {
-      if (array[i].task == todoEntry) {
+      let a = array[i].task
+      if (a.toUpperCase() == todoEntry.toUpperCase()) {
+        console.log('entrei no if da tarefaf igual')
         doubleTask = true;
       }
     }
