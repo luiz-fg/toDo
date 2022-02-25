@@ -13,8 +13,10 @@
 
 <body onload="td.showTask()">
   <div class="container">
+
     <div class="input-todo">
-      <input type="text" name="" id="todo-entry" autofocus placeholder="Task to be done">
+      <p id="counter" class="counter">82</p>
+      <input type="text" name="" id="todo-entry" onkeyup="td.char_count()" autofocus maxlength="82" placeholder="Task to do">
       <input type="button" value="Add" id="btn" onclick="td.newTask()">
     </div>
     <div class="tasksDo" id="taskDo">

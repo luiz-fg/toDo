@@ -1,9 +1,15 @@
 let cont = 0;
-let tasksDo, todoEntry, id, array;
+let tasksDo, todoEntry, id, array, counter;
 let myStorage = localStorage;
-
 class toDo {
-  constructor() {}
+  constructor() {
+    addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        td.newTask();
+        td.char_count();
+      }
+    });
+  }
 
   setStorage(array) {
     myStorage.setItem("toDo", JSON.stringify(array));
@@ -45,7 +51,8 @@ class toDo {
     let doubleTask = false;
 
     for (let i in array) {
-      if (array[i].task == todoEntry) {
+      let a = array[i].task;
+      if (a.toUpperCase() == todoEntry.toUpperCase()) {
         doubleTask = true;
       }
     }
@@ -83,7 +90,6 @@ class toDo {
         cor = "black";
       }
 
-      // style="color:white;padding:30px;"
       tasksDo.innerHTML += `
       <div class="task" >
       <span style="color:${cor}" class="taskText" id="id-${cont}" onclick="td.taskDone(this.id, ${array[i].idd})">${array[i].task}</span>
@@ -92,6 +98,16 @@ class toDo {
       `;
       cont++;
     }
+  }
+
+  char_count() {
+    counter = document.getElementById("counter");
+    todoEntry = document.getElementById("todo-entry").value;
+
+    if (todoEntry.length == 0) {
+      counter.innerHTML = 82;
+    }
+    counter.innerHTML = 82 - todoEntry.length;
   }
 
   generateID() {
